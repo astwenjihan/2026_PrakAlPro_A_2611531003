@@ -10,4 +10,4 @@ print("Program ini menghasilkan")
 print("Empat baris output")
 print("/ \\ // \\\\ /// \\\\\\")
 print("program ini" + "dibuat oleh a/n" 
-+ "nama dan nim.")
++ "Jihan Iftinan Syadza Astwen dan NIM 2611531003.")
