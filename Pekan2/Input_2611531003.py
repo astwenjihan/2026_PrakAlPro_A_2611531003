@@ -1,4 +1,4 @@
-# Buat file dengan nama Boolean_NIM.py
+# Buat file dengan nama Input_NIM.py
 # Buat program untuk menghitung luas persegi panjang
 # Nama variabel ditambah 4 digit nim terakhir contoh: panjang_1234
 # Program ini menggunakan fungsi input() untuk meminta pengguna
