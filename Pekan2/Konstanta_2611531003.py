@@ -1,4 +1,4 @@
-# Buat file dengan nama Boolean_NIM.py
+# Buat file dengan nama Konstanta_NIM.py
 # Program ini menggunakan konstanta untuk menghitung luas lingkaran
 # Nama variabel ditambah 4 digit nim terakhir contoh: jari_1234
 
