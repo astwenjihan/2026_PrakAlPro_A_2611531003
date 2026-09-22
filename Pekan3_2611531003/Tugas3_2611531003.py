@@ -1,10 +1,9 @@
-# Program Studi Kasus Terpadu: Sistem Simulasi Transaksi dan Validasi Akses Toko
+# Program Studi Kasus: Sistem Simulasi Transaksi dan Validasi Akses Toko
 # Nama File: tugas3_2611531003.py
-# Mata Kuliah: Praktikum Algoritma dan Pemrograman
 
 print("=== SISTEM TRANSAKSI TOKO ===")
 
-# 2. Data Pelanggan dan Transaksi (Menggunakan input)
+# 2. Data Pelanggan dan Transaksi
 nama_1003 = input("Masukkan Nama Pelanggan : ")
 status_pelanggan_1003 = input("Masukkan Status Pelanggan (member/nonmember) : ")
 total_belanja_1003 = int(input("Masukkan Total Belanja : "))
@@ -14,7 +13,7 @@ kode_promo_1003 = input("Masukkan Kode Promo : ")
 print("\n=== DATA TRANSAKSI ===")
 print("Nama Pelanggan   :", nama_1003)
 print("Status Pelanggan :", status_pelanggan_1003)
-print("Total Belanja    : Rp", total_belanja_1003)
+print(f"Total Belanja    : Rp{total_belanja_1003}")
 print("Jumlah Barang    :", jumlah_barang_1003)
 print("Kode Promo       :", kode_promo_1003)
 
@@ -23,7 +22,7 @@ is_belanja_cukup_1003 = total_belanja_1003 >= 200000
 is_barang_cukup_1003 = jumlah_barang_1003 >= 3
 is_member_1003 = status_pelanggan_1003.strip().lower() == "member"
 
-# 7. Operator Keanggotaan (Membership)
+# 7. Operator Keanggotaan
 daftar_promo_1003 = ["HEMAT10", "HEMAT20", "GRATISONGKIR"]
 is_promo_tersedia_1003 = kode_promo_1003.strip().upper() in daftar_promo_1003
 
@@ -49,23 +48,25 @@ else:
     diskon_1003 = 0
 
 total_pembayaran_1003 = total_belanja_1003 - diskon_1003
-rata_rata_1003 = total_belanja_1003 / jumlah_barang_1003 if jumlah_barang_1003 > 0 else 0
+# Dihitung dari total pembayaran dibagi jumlah barang agar sesuai contoh gambar (225000 / 4 = 56250)
+rata_rata_1003 = total_pembayaran_1003 / jumlah_barang_1003 if jumlah_barang_1003 > 0 else 0
 
 print("\n=== HASIL PERHITUNGAN ===")
-print("Diskon                : Rp", diskon_1003)
-print("Total Pembayaran      : Rp", total_pembayaran_1003)
-print("Rata-rata Harga Barang: Rp", int(rata_rata_1003))
+print(f"Diskon                : Rp{diskon_1003}")
+print(f"Total Pembayaran      : Rp{total_pembayaran_1003}")
+print(f"Rata-rata Harga Barang: Rp{int(rata_rata_1003)}")
 
 print("\n=== HAK AKSES PELANGGAN ===")
+print("Kode Hak Akses        : ...")
 print("Member Access         :", member_access_1003)
 print("Promo Access          :", promo_access_1003)
-print("Free Shipping Access  :", free_shipping_access_1003)
+print("Free Shipping Access  : ", free_shipping_access_1003)
 
-# 6. Operator Penugasan (Assignment & Augmented Assignment)
-poin_1003 = 100        # Assignment biasa
-poin_1003 += 50        # Augmented assignment penambahan
+# 6. Operator Penugasan
+poin_1003 = 100
+poin_1003 += 50
 
-# 8. Operator Identitas (Identity)
+# 8. Operator Identitas
 objek_a_1003 = ["Akses", "Toko"]
 objek_b_1003 = objek_a_1003
 objek_c_1003 = ["Akses", "Toko"]
@@ -73,7 +74,6 @@ cek_is_1003 = objek_a_1003 is objek_b_1003
 cek_is_not_1003 = objek_a_1003 is not objek_c_1003
 
 # 9. Operator Bitwise
-# Nilai Bit: 0001 (Member), 0010 (Belanja >= 200k), 0100 (Jumlah barang >= 3), 1000 (Kode promo tersedia)
 bit_member_1003 = 1 if is_member_1003 else 0
 bit_belanja_1003 = 2 if is_belanja_cukup_1003 else 0
 bit_barang_1003 = 4 if is_barang_cukup_1003 else 0
@@ -101,7 +101,7 @@ print("Hasil Biner :", bin(hasil_and_promo_1003)[2:].zfill(4))
 print("Hasil Desimal:", hasil_and_promo_1003)
 
 print("\n=== Perbandingan Status ===")
-kode_referensi_1003 = 0b1011  # 11 dalam desimal
+kode_referensi_1003 = 0b1011
 print("Kode Transaksi :", bin(kode_status_bit_1003)[2:].zfill(4))
 print("Kode Referensi : 1011")
 hasil_xor_1003 = kode_status_bit_1003 ^ kode_referensi_1003
@@ -110,8 +110,8 @@ print("Hasil Biner :", bin(hasil_xor_1003)[2:].zfill(4))
 print("Hasil Desimal:", hasil_xor_1003)
 
 print("\n=== Shift ===")
-hasil_shift_1003 = kode_status_bit_1003 << 1
 print(f"{bin(kode_status_bit_1003)[2:].zfill(4)} << 1")
+hasil_shift_1003 = kode_status_bit_1003 << 1
 print("Hasil Biner :", bin(hasil_shift_1003)[2:].zfill(4))
 print("Hasil Desimal:", hasil_shift_1003)
 
