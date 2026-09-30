@@ -1,0 +1,1188 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/astwenjihan/2026_PrakAlPro_A_2611531003/blob/main/2026_PrakAlPro_A_2611531003%20/Pekan5_2611531003\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "ooovPel-GDrZ",
+      "metadata": {
+        "id": "ooovPel-GDrZ"
+      },
+      "source": [
+        "<div align=\"center\">\n",
+        "\n",
+        "**LAPORAN PRAKTIKUM**\n",
+        "\n",
+        "**PRAKTIKUM ALGORITMA DAN PEMOGRAMAN**\n",
+        "\n",
+        "**\"PERULANGAN FOR\"**\n",
+        "\n",
+        "**Disusun Oleh :**\n",
+        "\n",
+        "**Jihan Iftinan Syadza Astwen**\n",
+        "\n",
+        "**2611531003**\n",
+        "\n",
+        "**Dosen Pengampu:**\n",
+        "\n",
+        "**Dr. Ir. Wahyudi, S.T, M.T**\n",
+        "\n",
+        "**Asisten Praktikum:**\n",
+        "\n",
+        "**Muhammad Galid Avero**\n",
+        "\n",
+        "<br>\n",
+        "\n",
+        " <img src=\"https://upload.wikimedia.org/wikipedia/commons/0/01/Logo_Unand.svg?utm_source=id.wikipedia.org&utm_campaign=index&utm_content=original\" width=\"200\">\n",
+        "\n",
+        "<br>\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "**FAKULTAS TEKNOLOGI INFORMASI**\n",
+        "\n",
+        "**DEPARTEMEN INFORMATIKA**\n",
+        "\n",
+        "**UNIVERSITAS ANDALAS**\n",
+        "\n",
+        "**2026**\n",
+        "\n",
+        "</div>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "LUzY0VlrGDrg",
+      "metadata": {
+        "id": "LUzY0VlrGDrg"
+      },
+      "source": [
+        "## KATA PENGANTAR\n",
+        "\n",
+        "Puji syukur penulis panjatkan atas kehadirat Tuhan Yang Maha Esa yang telah memberikan rahmat dan berkat-Nya, sehingga penulis dapat menyelesaikan laporan praktikum Pertemuan 5 (Perulangan For dan Nested Loop) yang telah dilaksanakan sebagai pertemuan ke-5 untuk mata kuliah Praktikum Algoritma dan Pemrograman. Praktikum ini berfokus pada pengenalan dan penerapan Perulangan For dan Nested Loop (Perulangan Bersarang).\n",
+        "\n",
+        "Melalui praktikum ini, hasil yang diharapkan adalah penulis dapat memahami dan mengimplementasikan secara langsung penggunaan berbagai struktur perulangan dan perulangan bersarang ke dalam kode program yang interaktif sesuai dengan skenario pembentukan pola geometri yang diinginkan.\n",
+        "\n",
+        "Penulis menyadari bahwa laporan praktikum ini masih memiliki banyak kekurangan. Oleh karena itu, kritik dan saran yang membangun sangat diharapkan demi perbaikan dan pengembangan di masa mendatang.\n",
+        "\n",
+        "Padang, 2026"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "nfzTDMIrGDri",
+      "metadata": {
+        "id": "nfzTDMIrGDri"
+      },
+      "source": [
+        "---\n",
+        "# BAB I\n",
+        "# PENDAHULUAN\n",
+        "\n",
+        "## 1.1 Latar Belakang\n",
+        "Setelah memahami konsep dasar mengenai penggunaan statement conditional (percabangan) pada pertemuan sebelumnya, langkah selanjutnya yang sangat penting dalam pengembangan program adalah bagaimana program tersebut dapat mengeksekusi sekumpulan instruksi secara berulang tanpa harus menuliskan kode yang sama berulang kali. Di sinilah peran penting struktur perulangan (looping) diperlukan.\n",
+        "\n",
+        "Struktur perulangan merupakan mekanisme kontrol alur (control flow) yang memungkinkan program untuk mengiterasi suatu blok kode berdasarkan kriteria atau jumlah iterasi tertentu. Dalam bahasa pemrograman Python, perulangan for digunakan secara meluas untuk mengiterasi urutan elemen atau sekumpulan nilai yang dihasilkan oleh fungsi range(). Ketika kompleksitas pemrosesan meningkat—seperti pemrosesan data multidimensi, matriks, hingga pembentukan pola geometri dua dimensi—penerapan perulangan bersarang (nested loop) menjadi sangat krusial. Perulangan bersarang mengombinasikan gelung luar (outer loop) untuk mengontrol pergerakan baris dan gelung dalam (inner loop) untuk mengontrol pergerakan kolom atau elemen horizontal secara terstruktur.\n",
+        "\n",
+        "Penguasaan terhadap struktur perulangan for dan nested loop murni ini menjadi fondasi utama bagi mahasiswa dalam merancang algoritma yang efisien, memahami alur eksekusi logika komputasi bertingkat, serta mampu memecahkan berbagai studi kasus manipulasi pola dan pemrosesan data di dunia nyata.\n",
+        "\n",
+        "## 1.2 Tujuan\n",
+        "1. Memahami konsep dasar, fungsi, dan alur eksekusi perulangan for serta perulangan bersarang (nested loop) dalam bahasa pemrograman Python.\n",
+        "\n",
+        "2. Mampu mengimplementasikan perulangan bersarang murni untuk merancang dan membentuk pola geometri dua dimensi yang dinamis serta terstruktur berdasarkan formula matematis.\n",
+        "\n",
+        "3. Melatih kemampuan analisis logika komputasi bertingkat dalam mengendalikan iterasi baris, kolom, dan variabel kondisi secara teratur tanpa bergantung pada manipulasi perkalian string.\n",
+        "\n",
+        "## 1.3 Manfaat\n",
+        "1. Memberikan pemahaman praktis kepada mahasiswa dalam mengoptimalkan pemrosesan tugas berulang secara efisien dan terstruktur dalam kode program.\n",
+        "\n",
+        "2. Mengembangkan kemampuan analisis dan berpikir sistematis dalam memecahkan masalah komputasi kompleks yang melibatkan struktur data berdimensi banyak.\n",
+        "\n",
+        "3. Menjadi landasan yang kuat dalam mempelajari materi algoritma pemrograman selanjutnya, seperti manipulasi array/list multidimensi, pemrosesan matriks, serta pembuatan fungsi (function)."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "8dvKa4dQGDrj",
+      "metadata": {
+        "id": "8dvKa4dQGDrj"
+      },
+      "source": [
+        "---\n",
+        "# BAB II\n",
+        "# PEMBAHASAN\n",
+        "\n",
+        "## 2.1 Dasar Teori\n",
+        "\n",
+        "Struktur perulangan (looping) atau kontrol alur (control flow) perulangan adalah mekanisme dalam pemrograman yang memungkinkan program untuk mengeksekusi sekumpulan blok kode secara berulang-ulang berdasarkan jumlah iterasi yang ditentukan atau hingga suatu kondisi terpenuhi. Dalam bahasa pemrograman Python, struktur perulangan for dan perulangan bersarang (nested loop) dikelompokkan berdasarkan parameter fungsi range(), arah alur iterasi, serta tingkat kompleksitas pembentukan pola data yang ditangani:\n",
+        "1. Perulangan for dengan 1 Parameter (range(stop)): Digunakan untuk mengeksekusi blok kode sebanyak nilai $N$ yang ditentukan. Fungsi range(stop) secara otomatis membangkitkan deret angka bulat yang dimulai secara default dari angka 0 hingga stop - 1. Variabel kontrol perulangan akan mengambil nilai dari deret tersebut satu per satu secara berurutan pada setiap iterasi.\n",
+        "\n",
+        "2. Perulangan for dengan 2 Parameter (range(start, stop)): Digunakan untuk menentukan rentang nilai perulangan secara eksplisit. Parameter start mendefinisikan batas awal titik mulai perulangan, sedangkan stop menentukan batas akhir eksklusif. Program akan mengiterasi variabel kontrol mulai dari nilai start hingga mencapai stop - 1, sehingga perulangan dapat dimulai dari angka mana saja tanpa harus dari nol.\n",
+        "\n",
+        "3. Perulangan for dengan 3 Parameter / Decrement (range(start, stop, step)): Menggunakan parameter step untuk mengontrol interval atau selisih perubahan nilai pada setiap iterasi. Jika nilai step positif, perulangan akan bergerak menaik (increment). Sebaliknya, jika nilai step negatif, perulangan akan bergerak mengundur/menurun (decrement), yang sangat berguna untuk proses perhitungan mundur.\n",
+        "\n",
+        "4. Perulangan Bersarang Matriks dan Grid 2D (Nested Loop Asas): Merupakan penggabungan dua struktur perulangan di mana sebuah perulangan dalam (inner loop) berada di dalam perulangan luar (outer loop). Outer loop bertugas mengontrol alur pergerakan baris (vertikal), sedangkan inner loop bertugas mengontrol pemrosesan kolom (horizontal) secara penuh untuk setiap satu kali iterasi outer loop.\n",
+        "\n",
+        "5. Perulangan Bersarang Pola Dinamis dan Simetris: Merupakan variasi nested loop di mana batas iterasi perulangan dalam (inner loop) bergantung secara dinamis pada nilai variabel perulangan luar (outer loop). Pendekatan ini digunakan untuk membentuk pola geometri dua dimensi, seperti segitiga siku-siku menaik, segitiga terbalik, maupun piramida simetris melalui manipulasi jumlah kolom dan spasi.\n",
+        "\n",
+        "6. Pengaturan Parameter end dan Formulasi Pola Geometri Kompleks: secara standar, fungsi print() di Python selalu menambah karakter baris baru (\\n). Dengan memodifikasi parameter end (seperti print(..., end=\"\")), elemen-elemen output dapat dicetak sejajar secara horizontal pada baris yang sama. Penggabungan nested loop murni dengan formula matematik spasi penyeimbang dan deret angka palindromik memungkinkan pembentukan pola geometri tingkat tinggi (seperti Jam Pasir Kristal) secara dinamis tanpa mengandalkan teknik pendaraban rentetan (string multiplication)."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "lrpMbOgnGDrl",
+      "metadata": {
+        "id": "lrpMbOgnGDrl"
+      },
+      "source": [
+        "## 2.2 Kode Program\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "-sLEwFnQr6Ku",
+      "metadata": {
+        "id": "-sLEwFnQr6Ku"
+      },
+      "source": [
+        "## 2.2.1 Perulangan_For1_2611531003.py"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "0I4bEBl0GDrm",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0I4bEBl0GDrm",
+        "outputId": "0d7408ff-0e3f-47f7-8c64-5f35d3fe0775"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan jumlah perulangan: 5\n",
+            "Perulangan ke-0\n",
+            "Perulangan ke-1\n",
+            "Perulangan ke-2\n",
+            "Perulangan ke-3\n",
+            "Perulangan ke-4\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Buat file dnegan nama Perulangan_For1_NIM.py\n",
+        "# Buat program untuk perulangan for dalam Python\n",
+        "# Nama Variabel ditambah 4 digit nim terakhir contoh: ulang_1234\n",
+        "# Program ini menggunakan fungsi input()\n",
+        "\n",
+        "ulang_1003 = int(input(\"Masukkan jumlah perulangan: \"))\n",
+        "\n",
+        "for i in range(ulang_1003):\n",
+        "    print(f\"Perulangan ke-{i}\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "2W-juywfGDro",
+      "metadata": {
+        "id": "2W-juywfGDro"
+      },
+      "source": [
+        "**Penjelasan Kode:**\n",
+        "\n",
+        "1. ​ulang_1003 = int(input(\"...\")): Meminta pengguna memasukkan angka jumlah perulangan. Fungsi input() mengambil teks yang diketik, lalu int() mengubahnya menjadi angka bulat dan menyimpannya di variabel ulang_1003.\n",
+        "\n",
+        "2. ​for i in range(ulang_1003):: Mengatur program untuk melakukan perulangan sebanyak angka yang diinputkan. Perulangan akan berjalan dari angka 0 sampai sebelum angka ulang_1003, di mana nilainya disimpan di variabel i.\n",
+        "\n",
+        "3. ​print(f\"Perulangan ke-{i}\"): Mencetak teks \"Perulangan ke-\" diikuti oleh nilai i yang bertambah otomatis pada setiap putaran.\n",
+        "\n",
+        "\n",
+        "**​Penjelasan Output:**\n",
+        "\n",
+        "1. ​Saat pengguna memasukkan angka 5, program akan melakukan perulangan sebanyak 5 kali.\n",
+        "\n",
+        "2. ​Karena perulangan di Python dimulai dari angka 0, maka program mencetak baris perintah berturut-turut untuk angka 0, 1, 2, 3, dan 4."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "-VwgD-0Tsdf7",
+      "metadata": {
+        "id": "-VwgD-0Tsdf7"
+      },
+      "source": [
+        "## 2.2.2 Perulangan_For2_2611531003.py"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "id": "cz8pt7b3tVJV",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "cz8pt7b3tVJV",
+        "outputId": "fbfb62ab-26e8-480c-e8fe-13bc2fd8a165"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan jumlah perulangan: 10\n",
+            "Perulangan ke-0 sampai ke- 9\n",
+            "0 1 2 3 4 5 6 7 8 9 \n",
+            "Perulagan ke-1 sampai ke- 10\n",
+            "1 2 3 4 5 6 7 8 9 10 "
+          ]
+        }
+      ],
+      "source": [
+        "# Buat file dnegan nama Perulangan_For2_NIM.py\n",
+        "# Buat program untuk perulangan for dalam Python\n",
+        "# Nama Variabel ditambah 4 digit nim terakhir contoh: ulang_1234\n",
+        "# Program ini menggunakan fungsi input()\n",
+        "\n",
+        "ulang_1003 = int(input(\"Masukkan jumlah perulangan: \"))\n",
+        "print(\"Perulangan ke-0 sampai ke-\", ulang_1003-1)\n",
+        "for i in range(ulang_1003):\n",
+        "    print(i, end=\" \")\n",
+        "print()\n",
+        "print(\"Perulagan ke-1 sampai ke-\", ulang_1003)\n",
+        "for i in range(1, ulang_1003+1):\n",
+        "    print(i, end=\" \")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "0NsgRb73tT1O",
+      "metadata": {
+        "id": "0NsgRb73tT1O"
+      },
+      "source": [
+        "**Penjelasan Kode:**\n",
+        " 1. ulang_1003 = int(input(\"...\")): Meminta pengguna memasukkan angka jumlah perulangan. Teks yang diinput diubah menjadi angka bulat dan disimpan di variabel ulang_1003.\n",
+        " 2. Perulangan Pertama (for i in range(ulang_1003)):\n",
+        "   * print(\"Perulangan ke-0 sampai ke-\", ulang_1003-1) mencetak teks keterangan awal.\n",
+        "   * range(ulang_1003) mengulang dari angka 0 sampai ulang_1003 - 1.\n",
+        "   * end=\" \" berfungsi agar deret angka dicetak berjejer ke samping (horizontal) dipisahkan spasi.\n",
+        " * print(): Perintah kosong ini digunakan untuk berpindah ke baris baru.\n",
+        " 3. Perulangan Kedua (for i in range(1, ulang_1003+1)):\n",
+        "   * print(\"Perulagan ke-1 sampai ke-\", ulang_1003) mencetak teks keterangan kedua.\n",
+        "   * range(1, ulang_1003+1) mengulang dari angka 1 sampai tepat di angka ulang_1003.\n",
+        "   * Angkanya dicetak berjejer ke samping menggunakan end=\" \".\n",
+        "\n",
+        "\n",
+        "**Penjelasan Output:**\n",
+        "\n",
+        "Misalkan pengguna memasukkan angka 5:\n",
+        " 1. Bagian 1 (Perulangan dari 0): Program mencetak teks \"Perulangan ke-0 sampai ke- 4\", lalu mencetak angka 0 1 2 3 4 secara horizontal di bawahnya.\n",
+        " 2. Bagian 2 (Perulangan dari 1): Program pindah baris, mencetak teks \"Perulagan ke-1 sampai ke- 5\", lalu mencetak angka 1 2 3 4 5 secara horizontal di bawahnya."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## 2.2.3 Perulangan_For3_2611531003.py"
+      ],
+      "metadata": {
+        "id": "_uBbC9IXbv_H"
+      },
+      "id": "_uBbC9IXbv_H"
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Buat file dnegan nama Perulangan_For3_NIM.py\n",
+        "# Buat program untuk perulangan for dalam Python\n",
+        "# Nama Variabel ditambah 4 digit nim terakhir contoh: ulang_1234\n",
+        "# Program ini menggunakan fungsi input()\n",
+        "\n",
+        "ulang_1003 = int(input(\"Masukkan jumlah perulangan: \"))\n",
+        "\n",
+        "jumlah_1003 = 0\n",
+        "for i in range(1, ulang_1003 + 1):\n",
+        "    print(i, end=\" \")\n",
+        "    jumlah_1003 = jumlah_1003 + i\n",
+        "\n",
+        "    if i < ulang_1003:\n",
+        "        print(\" + \", end=\"\")\n",
+        "    else:\n",
+        "        print(\" = \", jumlah_1003, end=\"\")\n",
+        "print()\n",
+        "print(\"Jumlah =\", jumlah_1003)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "LDbycsAdcErl",
+        "outputId": "2dc022ff-b5fe-4741-886b-2e7eb93388a5"
+      },
+      "id": "LDbycsAdcErl",
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan jumlah perulangan: 10\n",
+            "1  + 2  + 3  + 4  + 5  + 6  + 7  + 8  + 9  + 10  =  55\n",
+            "Jumlah = 55\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Penjelasan Kode:**\n",
+        "\n",
+        "1. `ulang_1003 = int(input(\"...\"))`: Meminta pengguna memasukkan angka jumlah perulangan dan menyimpannya sebagai angka bulat di variabel `ulang_1003`.\n",
+        "2. `jumlah_1003 = 0`: Menyiapkan variabel `jumlah_1003` dengan nilai awal `0` untuk menampung total hasil penjumlahan.\n",
+        "3. `for i in range(1, ulang_1003 + 1):`: Mengatur perulangan angka dari `1` sampai tepat di angka `ulang_1003`.\n",
+        "4. `jumlah_1003 = jumlah_1003 + i`: Menambahkan nilai `i` saat itu ke dalam total `jumlah_1003` di setiap putaran.\n",
+        "5. `if ... else ...` dalam perulangan:\n",
+        "* `if i < ulang_1003`: Jika perulangan belum sampai di angka terakhir, cetak tanda `+` di samping angka.\n",
+        "* `else`: Jika sudah sampai di angka terakhir, cetak tanda `=` beserta total hasil sementara.\n",
+        "\n",
+        "6. `print(\"Jumlah =\", jumlah_1003)`: Menampilkan kembali total hasil akhir penjumlahan di baris baru.\n",
+        "\n",
+        "\n",
+        "**Penjelasan Output:**\n",
+        "\n",
+        "Misalkan pengguna memasukkan angka **10**:\n",
+        "\n",
+        "1. Program akan menghitung deret penjumlahan dari angka **1** sampai **10**.\n",
+        "2. Baris Pertama: Mencetak proses penjumlahannya secara langsung ke samping, yaitu `1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 = 55`.\n",
+        "3. Baris Kedua: Mencetak hasil total akhirnya di baris baru, yaitu `Jumlah = 55`."
+      ],
+      "metadata": {
+        "id": "Se6sLRBGcQUs"
+      },
+      "id": "Se6sLRBGcQUs"
+    },
+    {
+      "cell_type": "markdown",
+      "id": "JvkvW-_0y_U_",
+      "metadata": {
+        "id": "JvkvW-_0y_U_"
+      },
+      "source": [
+        "## 2.2.4 Nested_For1_2611531003.py"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 5,
+      "id": "ug1Mg77TyvzZ",
+      "metadata": {
+        "id": "ug1Mg77TyvzZ",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "51d8dd55-efc5-43b0-c77b-da03eb9f2957"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan nilai batas: 5\n",
+            "....1\n",
+            "...2\n",
+            "..3\n",
+            ".4\n",
+            "5\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Buat file dnegan nama Nested_For1_NIM.py\n",
+        "# Buat program untuk perulangan for dalam Python\n",
+        "# Nama Variabel ditambah 4 digit nim terakhir contoh: ulang_1234\n",
+        "# Program ini menggunakan fungsi input()\n",
+        "\n",
+        "batas_1003 = int(input(\"Masukkan nilai batas: \"))\n",
+        "for line_1003 in range(1, batas_1003 + 1):\n",
+        "    for j in range(1, (-1 * line_1003 + batas_1003) + 1):\n",
+        "        print(\".\", end=\"\")\n",
+        "    print(line_1003)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "-iCnr5Kn1Nhh",
+      "metadata": {
+        "id": "-iCnr5Kn1Nhh"
+      },
+      "source": [
+        "**Penjelasan Kode:**\n",
+        "\n",
+        "1. batas_1003 = int(input(\"...\")): Meminta pengguna memasukkan angka batas perulangan dan menyimpannya sebagai angka bulat di variabel batas_1003.\n",
+        "\n",
+        "2. Perulangan Luar (for line_1003 in range(1, batas_1003 + 1):): Mengatur jumlah baris yang akan dicetak, yaitu dari baris ke-1 sampai baris ke-batas_1003.\n",
+        "\n",
+        "3. Perulangan Dalam (for j in range(...)): Mencetak titik (.) secara mendatar (ke samping). Jumlah titik dihitung dari batas_1003 - line_1003, sehingga semakin bawah barisnya, jumlah titik akan semakin berkurang.\n",
+        "\n",
+        "4. print(line_1003): Mencetak angka nomor baris di ujung kanan setelah titik, lalu otomatis berpindah ke baris baru.\n",
+        "\n",
+        "**Penjelasan Output:**\n",
+        "\n",
+        "Misalkan pengguna memasukkan angka 5:\n",
+        "\n",
+        "1. Baris 1: Mencetak 4 titik lalu angka 1 (....1).\n",
+        "\n",
+        "2. Baris 2: Mencetak 3 titik lalu angka 2 (...2).\n",
+        "\n",
+        "3. Baris 3: Mencetak 2 titik lalu angka 3 (..3).\n",
+        "\n",
+        "4. Baris 4: Mencetak 1 titik lalu angka 4 (.4).\n",
+        "\n",
+        "5. Baris 5: Mencetak 0 titik (tanpa titik) lalu angka 5 (5)."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "0d6MmRH0402n",
+      "metadata": {
+        "id": "0d6MmRH0402n"
+      },
+      "source": [
+        "## 2.2.5 Nested_For2_2611531003.py"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 7,
+      "id": "1kwQsLdv5eeQ",
+      "metadata": {
+        "id": "1kwQsLdv5eeQ",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "ba1eb072-e51a-44c0-ff69-46803ba45858"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan nilai batas: 5\n",
+            "+++++\n",
+            "+++++\n",
+            "+++++\n",
+            "+++++\n",
+            "+++++\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Buat file dnegan nama Nested_For2_NIM.py\n",
+        "# Buat program untuk perulangan for dalam Python\n",
+        "# Nama Variabel ditambah 4 digit nim terakhir contoh: ulang_1234\n",
+        "# Program ini menggunakan fungsi input()\n",
+        "\n",
+        "batas_1003 = int(input(\"Masukkan nilai batas: \"))\n",
+        "for i in range(1, batas_1003 + 1):\n",
+        "    for j in range(1, batas_1003 + 1):\n",
+        "        print(\"+\", end=\"\")\n",
+        "    print() # Pindah ke baris berikutnya"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "4Ojwe5Tt5HzD",
+      "metadata": {
+        "id": "4Ojwe5Tt5HzD"
+      },
+      "source": [
+        "**Penjelasan Kode:**\n",
+        "\n",
+        "1. batas_1003 = int(input(\"...\")): Meminta pengguna memasukkan angka batas perulangan dan menyimpannya sebagai angka bulat di variabel batas_1003.\n",
+        "\n",
+        "2. Perulangan Luar (for i in range(1, batas_1003 + 1):): Mengatur jumlah baris ke bawah (vertikal) yang akan dicetak, yaitu dari baris ke-1 sampai baris ke-batas_1003.\n",
+        "\n",
+        "3. Perulangan Dalam (for j in range(1, batas_1003 + 1):): Mencetak tanda tambah (+) secara mendatar (ke samping) sebanyak nilai batas_1003 pada setiap barisnya.\n",
+        "\n",
+        "4. print(): Perintah kosong untuk berpindah ke baris baru setelah perulangan dalam selesai mencetak tanda + di satu baris.\n",
+        "\n",
+        "**Penjelasan Output:**\n",
+        "\n",
+        "Misalkan pengguna memasukkan angka 4:\n",
+        "\n",
+        "Program akan membentuk pola kotak/grid berukuran 4 x 4 berisi tanda +.\n",
+        "\n",
+        "* Baris 1: ++++\n",
+        "\n",
+        "* Baris 2: ++++\n",
+        "\n",
+        "* Baris 3: ++++\n",
+        "\n",
+        "* Baris 4: ++++"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "Nywo0G54-MG8",
+      "metadata": {
+        "id": "Nywo0G54-MG8"
+      },
+      "source": [
+        "## 2.2.6 Nested_For3_2611531003.py"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 9,
+      "id": "qwfJ7ByY_GOW",
+      "metadata": {
+        "id": "qwfJ7ByY_GOW",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "8707a2a9-4634-4c33-9e64-2127fe98a8c8"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan nilai batas: 5\n",
+            "0 1 2 3 4 5 \n",
+            "1 2 3 4 5 6 \n",
+            "2 3 4 5 6 7 \n",
+            "3 4 5 6 7 8 \n",
+            "4 5 6 7 8 9 \n",
+            "5 6 7 8 9 10 \n"
+          ]
+        }
+      ],
+      "source": [
+        "# Buat file dnegan nama Nested_For3_NIM.py\n",
+        "# Buat program untuk perulangan for dalam Python\n",
+        "# Nama Variabel ditambah 4 digit nim terakhir contoh: ulang_1234\n",
+        "# Program ini menggunakan fungsi input()\n",
+        "\n",
+        "batas_1003 = int(input(\"Masukkan nilai batas: \"))\n",
+        "for i in range(batas_1003 + 1):\n",
+        "    for j in range(batas_1003 + 1):\n",
+        "        print(i+j, end=\" \")\n",
+        "    print()  # Pindah ke baris berikutnya"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "V7yfxqIZ_Eap",
+      "metadata": {
+        "id": "V7yfxqIZ_Eap"
+      },
+      "source": [
+        "**Penjelasan Kode:**\n",
+        "\n",
+        "1. batas_1003 = int(input(\"...\")): Meminta pengguna memasukkan angka batas perulangan dan menyimpannya sebagai angka bulat di variabel batas_1003.\n",
+        "\n",
+        "2. Perulangan Luar (for i in range(batas_1003 + 1):): Mengatur nomor baris dari angka 0 sampai batas_1003. Nilai i mewakili angka awal untuk baris tersebut.\n",
+        "\n",
+        "3. Perulangan Dalam (for j in range(batas_1003 + 1):): Mengatur kolom dari angka 0 sampai batas_1003. Pada setiap posisi, program mencetak hasil penjumlahan nilai baris dan kolom (i + j) secara mendatar dipisahkan spasi (end=\" \").\n",
+        "\n",
+        "4. print(): Perintah kosong untuk berpindah ke baris baru setelah satu baris selesai dicetak.\n",
+        "\n",
+        "**Penjelasan Output:**\n",
+        "\n",
+        "Misalkan pengguna memasukkan angka 3:\n",
+        "1. Program akan membentuk matriks/tabel angka dari hasil penjumlahan baris ($i$) dan kolom ($j$):\n",
+        "2. Baris 1 ($i = 0$): 0 1 2 3 (dari $0+0, 0+1, 0+2, 0+3$)\n",
+        "3. Baris 2 ($i = 1$): 1 2 3 4 (dari $1+0, 1+1, 1+2, 1+3$)\n",
+        "4. Baris 3 ($i = 2$): 2 3 4 5 (dari $2+0, 2+1, 2+2, 2+3$)\n",
+        "5. Baris 4 ($i = 3$): 3 4 5 6 (dari $3+0, 3+1, 3+2, 3+3$)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## 2.2.7 Nested_For4_2611531003.py"
+      ],
+      "metadata": {
+        "id": "g0jSONm6lPQP"
+      },
+      "id": "g0jSONm6lPQP"
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Buat file dnegan nama Nested_For4_NIM.py\n",
+        "# Buat program untuk perulangan for dalam Python\n",
+        "# Nama Variabel ditambah 4 digit nim terakhir contoh: ulang_1234\n",
+        "# Program ini menggunakan fungsi input()\n",
+        "\n",
+        "tinggi_1003 = int(input(\"Masukkan tinggi pola (bilangan genap, misal 10): \"))\n",
+        "\n",
+        "if tinggi_1003 % 2 != 0:\n",
+        "    print(\"Tinggi harus bilangan genap!\")\n",
+        "else:\n",
+        "    a_1003 = tinggi_1003\n",
+        "    c_1003 = a_1003\n",
+        "    lebar_1003 = (2 * tinggi_1003) - 2\n",
+        "\n",
+        "    for i in range(1, tinggi_1003 + 1):\n",
+        "        b_1003 = c_1003 + 1\n",
+        "\n",
+        "        for j in range (1, lebar_1003 + 1):\n",
+        "\n",
+        "            # Baris atas dan bawah\n",
+        "            if i == 1 or i == tinggi_1003:\n",
+        "                if j == 1 or j == lebar_1003:\n",
+        "                    print(\"#\", end=\"\")\n",
+        "                else:\n",
+        "                    print(\"=\", end=\"\")\n",
+        "\n",
+        "            # Baris isi\n",
+        "            else:\n",
+        "                if j == 1 or j == lebar_1003:\n",
+        "                    print(\"|\", end=\"\")\n",
+        "                else:\n",
+        "                    if j == c_1003:\n",
+        "                        print(\"<\", end=\"\")\n",
+        "                    elif j == b_1003:\n",
+        "                        print(\">\", end=\"\")\n",
+        "                    elif j == (lebar_1003 - c_1003):\n",
+        "                        print(\"<\", end=\"\")\n",
+        "                    elif j == (lebar_1003 - c_1003 + 1):\n",
+        "                        print(\">\", end=\"\")\n",
+        "                    elif j > b_1003 and j < (lebar_1003 - c_1003):\n",
+        "                        print(\".\", end=\"\")\n",
+        "                    else:\n",
+        "                        print(\" \", end=\"\")\n",
+        "        print()\n",
+        "\n",
+        "        # logika asli java\n",
+        "        a_1003 -= 2\n",
+        "\n",
+        "        if a_1003 <= 0:\n",
+        "            c_1003 = (-a_1003) + 2\n",
+        "        else:\n",
+        "            c_1003 = a_1003"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3IqiqebjllnB",
+        "outputId": "fe73d74f-c881-475b-a2ad-d09a3e1dd38e"
+      },
+      "id": "3IqiqebjllnB",
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan tinggi pola (bilangan genap, misal 10): 10\n",
+            "#================#\n",
+            "|      <><>      |\n",
+            "|    <>....<>    |\n",
+            "|  <>........<>  |\n",
+            "|<>............<>|\n",
+            "|<>............<>|\n",
+            "|  <>........<>  |\n",
+            "|    <>....<>    |\n",
+            "|      <><>      |\n",
+            "#================#\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Penjelasan Kode:**\n",
+        "\n",
+        "1. tinggi_1003 = int(input(\"...\")): Meminta pengguna memasukkan nilai tinggi pola dan menyimpannya di variabel tinggi_1003.\n",
+        "\n",
+        "2. Pengecekan Genap (if tinggi_1003 % 2 != 0:): Memeriksa apakah input angka ganjil. Jika ganjil, program mencetak pesan \"Tinggi harus bilangan genap!\" dan berhenti.\n",
+        "\n",
+        "3. Inisialisasi Variabel Bingkai & Pola:\n",
+        "\n",
+        "* lebar_1003 = (2 * tinggi_1003) - 2: Menghitung lebar total kotak bingkai.\n",
+        "\n",
+        "* a_1003 dan c_1003: Variabel pembantu untuk mengatur pergerakan posisi simbol <> ke dalam dan ke luar.\n",
+        "\n",
+        "4. Perulangan Luar (for i in range(1, tinggi_1003 + 1):): Mengatur alur percetakan dari baris ke-1 sampai baris paling bawah.\n",
+        "\n",
+        "5. Perulangan Dalam (for j in range(1, lebar_1003 + 1):):\n",
+        "\n",
+        "* Bingkai Atas & Bawah (i == 1 atau i == tinggi_1003): Mencetak sudut # di paling ujung kiri/kanan dan = di bagian tengahnya.\n",
+        "\n",
+        "* Bingkai Dinding Sisi (j == 1 atau j == lebar_1003): Mencetak garis vertikal | di paling kiri dan kanan.\n",
+        "\n",
+        "* Simbol Pola Dalam: Mencetak pasangan karakter < dan >, serta titik . di antara pasangan karakter tersebut.\n",
+        "\n",
+        "6. Perubahan Posisi Pola (a_1003 -= 2): Mengubah nilai c_1003 di setiap baris agar simbol <> bergerak menyempit ke tengah di setengah bagian atas, lalu melebar kembali di setengah bagian bawah (membentuk pola jam pasir/kristal).\n",
+        "\n",
+        "**Penjelasan Output:**\n",
+        "\n",
+        "Misalkan pengguna memasukkan angka 10:\n",
+        "\n",
+        "1. Pengecekan Input: Angka 10 adalah bilangan genap, sehingga program langsung membentuk pola dengan tinggi 10 baris dan lebar 18 kolom.\n",
+        "\n",
+        "2. Baris Pertama & Terakhir: Dicetak sebagai bingkai penutup berupa #================#.\n",
+        "\n",
+        "3. Baris Tengah (Sisi Dalam):\n",
+        "\n",
+        "* Sisi paling luar kiri dan kanan ditutup oleh garis |.\n",
+        "\n",
+        "* Di bagian dalam, simbol <> dan . membentuk pola jam pasir simetris yang menyempit di tengah pada baris ke-5 dan 6, lalu kembali melebar hingga baris ke-9.\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "MFX5aNWPl46f"
+      },
+      "id": "MFX5aNWPl46f"
+    },
+    {
+      "cell_type": "markdown",
+      "id": "6fa6b004",
+      "metadata": {
+        "id": "6fa6b004"
+      },
+      "source": [
+        "---\n",
+        "## 2.3 Tugas Praktikum"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## 2.3.1 Tugas di Papan Tulis (Latihan5_2611531003)"
+      ],
+      "metadata": {
+        "id": "3w8I8lPenCF-"
+      },
+      "id": "3w8I8lPenCF-"
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Soal:**\n",
+        "\n",
+        "<br>\n",
+        "\n",
+        " <img src=\"https://drive.google.com/file/d/11oxR0cgbwcLtB0lzAWK-2xKshDpShWMx/view?usp=sharing\" width=\"200\">\n",
+        "\n",
+        "<br>"
+      ],
+      "metadata": {
+        "id": "Q1pYJtKg5quv"
+      },
+      "id": "Q1pYJtKg5quv"
+    },
+    {
+      "cell_type": "markdown",
+      "id": "af6fe9b4",
+      "metadata": {
+        "id": "af6fe9b4"
+      },
+      "source": [
+        "**Jawaban:**"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 16,
+      "id": "742003ba",
+      "metadata": {
+        "id": "742003ba",
+        "outputId": "24f07dce-13a3-4d7d-e13a-3defc1f9010b",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan tinggi segitiga: 5\n",
+            "    * \n",
+            "   * * \n",
+            "  * * * \n",
+            " * * * * \n",
+            "* * * * * \n"
+          ]
+        }
+      ],
+      "source": [
+        "tinggi_1003 = int(input(\"Masukkan tinggi segitiga: \"))\n",
+        "\n",
+        "for i in range(1, tinggi_1003 + 1):\n",
+        "    print(\" \" * (tinggi_1003 - i), end=\"\")\n",
+        "\n",
+        "    print(\"* \" * i)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "3f5eb800",
+      "metadata": {
+        "id": "3f5eb800"
+      },
+      "source": [
+        "**Penjelasan Kode:**\n",
+        "\n",
+        "1. tinggi_1003 = int(input(\"...\")): Meminta pengguna memasukkan angka tinggi segitiga, diubah menjadi angka bulat, lalu disimpan di variabel tinggi_1003.\n",
+        "\n",
+        "2. for i in range(1, tinggi_1003 + 1):: Mengatur perulangan untuk mencetak baris demi baris, dari baris ke-1 sampai baris ke-tinggi_1003.\n",
+        "\n",
+        "3. print(\" \" * (tinggi_1003 - i), end=\"\"): Mencetak spasi di sebelah kiri tanpa pindah baris (end=\"\"). Semakin ke bawah barisnya, jumlah spasi semakin berkurang agar posisi bintang terdorong rapi ke tengah.\n",
+        "\n",
+        "4. print(\"* \" * i): Mencetak simbol bintang dan spasi (* ) sebanyak nilai i (nomor baris) lalu otomatis berpindah ke baris baru.\n",
+        "\n",
+        "**Penjelasan Output:**\n",
+        "\n",
+        "Misalkan pengguna memasukkan angka 4:\n",
+        "\n",
+        "1. Program akan membentuk pola piramida/segitiga bintang setinggi 4 baris:\n",
+        "\n",
+        "2. Baris 1: Mencetak 3 spasi di kiri, lalu 1 bintang (  *).\n",
+        "\n",
+        "3. Baris 2: Mencetak 2 spasi di kiri, lalu 2 bintang ( * *).\n",
+        "\n",
+        "4. Baris 3: Mencetak 1 spasi di kiri, lalu 3 bintang (* * *).\n",
+        "\n",
+        "5. Baris 4: Mencetak 0 spasi di kiri, lalu 4 bintang (* * * * )."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## 2.3.2 Tugas di CODATA (Tugas5_2611531003)"
+      ],
+      "metadata": {
+        "id": "YeePxG0zBOvc"
+      },
+      "id": "YeePxG0zBOvc"
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Soal:**\n",
+        "\n",
+        "Studi Kasus: Pola Jam Pasir Kristal Palindromik Berbingkai (Framed Palindromic Crystal Hourglass)\n",
+        "Mahasiswa diminta merancang program konsol interaktif untuk mencetak pola bangun geometri dua dimensi berupa Jam Pasir Kristal Palindromik yang terbungkus rapi di dalam bingkai pembatas berpagar. Berbeda dengan pola dasar, program ini menuntut pembentukan deret angka yang bergerak dinamis menurun dan menaik secara palindromik pada setiap baris serta diselaraskan dengan poros kristal di pusat bangun.\n",
+        "\n",
+        "Program menerima masukan nilai integer positif N dari pengguna yang merepresentasikan ukuran skala jam pasir (skala angka tertinggi pada puncak dan alas).\n",
+        "\n",
+        "Struktur Pembentukan Pola (3 Fase + 2 Bingkai Horizontal):\n",
+        "1. Bingkai Pembatas Horizontal (Border Atas dan Bawah):\n",
+        "* Karakter pagar sudut (#) di ujung kiri dan kanan.\n",
+        "* Karakter garis ganda (=) di bagian tengah sebanyak (4 * N + 5) karakter.\n",
+        "\n",
+        "2. Fase 1: Jam Pasir Atas (Reduksi Angka Menurun: Baris N turun s.d. 1):\n",
+        "* Sisi kiri dibatasi garis tegak (|) dan satu spasi padding.\n",
+        "* Spasi penyeimbang kiri sebanyak 2 * (N - baris).\n",
+        "* Deret angka mundur dari baris turun ke 1, dipisahkan oleh spasi (contoh baris 4: \"4 3 2 1 \").\n",
+        "* Poros kristal tengah: karakter \"<*>\".\n",
+        "* Deret angka maju dari 1 naik ke baris, diawali spasi (contoh baris 4: \" 1 2 3 4\").\n",
+        "* Spasi penyeimbang kanan sebanyak 2 * (N - baris).\n",
+        "* Satu spasi padding dan garis tegak (|) di sisi kanan.\n",
+        "\n",
+        "3. Fase 2: Poros Titik Pusat Jam Pasir (Titik Nol / Singularity):\n",
+        "* Karakter garis tegak pembatas (|) di kiri.\n",
+        "* Spasi penyeimbang kiri sebanyak (2 * N + 1).\n",
+        "* Karakter poros kristal tunggal \"<*>\".\n",
+        "* Spasi penyeimbang kanan sebanyak (2 * N + 1).\n",
+        "* Karakter garis tegak pembatas (|) di kanan.\n",
+        "\n",
+        "4. Fase 3: Jam Pasir Bawah (Ekspansi Angka Menaik: Baris 1 naik s.d. N):\n",
+        "* Sisi kiri dibatasi garis tegak (|) dan satu spasi padding.\n",
+        "* Spasi penyeimbang kiri sebanyak 2 * (N - baris).\n",
+        "* Deret angka mundur dari baris turun ke 1, dipisahkan oleh spasi.\n",
+        "* Poros kristal tengah: karakter \"<*>\".\n",
+        "* Deret angka maju dari 1 naik ke baris, diawali spasi.\n",
+        "* Spasi penyeimbang kanan sebanyak 2 * (N - baris).\n",
+        "* Satu spasi padding dan garis tegak (|) di sisi kanan.\n",
+        "\n",
+        "\n",
+        "Ketentuan Teknis Program\n",
+        "\n",
+        "Aturan Penamaan Variabel: Setiap variabel yang dideklarasikan wajib diakhiri dengan 4 digit terakhir NIM mahasiswa (contoh: n_1234, baris_1234, spasi_1234, angka_1234). Penulisan variabel harus mematuhi kaidah case-sensitive dan bebas reserved keywords.\n",
+        "\n",
+        "Masukan Dinamis: Meminta masukan ukuran N via input() dan dikonversi ke tipe data integer menggunakan int().\n",
+        "\n",
+        "Struktur Nested Loop Murni: Dilarang keras menggunakan jalan pintas manipulasi string perkalian seperti print(\"=\" * n), print(\" \" * spasi), atau perkalian list. Seluruh pembentukan border, deret spasi, dan deret angka WAJIB diiterasi menggunakan perulangan for bersarang dengan parameter end=\"\".\n",
+        "\n",
+        "Pindah Baris: Gunakan perintah print() tanpa argumen pada akhir setiap baris pola.\n",
+        "\n",
+        "\n",
+        "Contoh Alur Eksekusi Program (I/O)\n",
+        "Uji Coba 1 (Ukuran N = 4):\n",
+        "\n",
+        "=== PROGRAM JAM PASIR KRISTAL PALINDROMIK (PEKAN 5) ===\n",
+        "\n",
+        "Masukkan ukuran skala jam pasir (N): 4\n",
+        "\n",
+        "Uji Coba 2 (Ukuran N = 3):\n",
+        "\n",
+        "=== PROGRAM JAM PASIR KRISTAL PALINDROMIK (PEKAN 5) ===\n",
+        "\n",
+        "Masukkan ukuran skala jam pasir (N): 3"
+      ],
+      "metadata": {
+        "id": "lJTIn46ICQre"
+      },
+      "id": "lJTIn46ICQre"
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Jawaban:**"
+      ],
+      "metadata": {
+        "id": "dDRKBLrXEC6d"
+      },
+      "id": "dDRKBLrXEC6d"
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"=== PROGRAM JAM PASIR KRISTAL PALINDROMIK (PEKAN 5) ===\")\n",
+        "\n",
+        "n_1003 = int(input(\"Masukkan ukuran skala jam pasir (N): \"))\n",
+        "\n",
+        "print(\"#\", end=\"\")\n",
+        "for i_1003 in range(4 * n_1003 + 5):\n",
+        "    print(\"=\", end=\"\")\n",
+        "print(\"#\")\n",
+        "\n",
+        "for baris_1003 in range(n_1003, 0, -1):\n",
+        "    print(\"| \", end=\"\")\n",
+        "\n",
+        "    for spasi_1003 in range(2 * (n_1003 - baris_1003)):\n",
+        "        print(\" \", end=\"\")\n",
+        "\n",
+        "    for angka_1003 in range(baris_1003, 0, -1):\n",
+        "        print(angka_1003, end=\"\")\n",
+        "        if angka_1003 > 1:\n",
+        "            print(\" \", end=\"\")\n",
+        "\n",
+        "    print(\"<*>\", end=\"\")\n",
+        "\n",
+        "    for angka_1003 in range(1, baris_1003 + 1):\n",
+        "        print(\" \", end=\"\")\n",
+        "        print(angka_1003, end=\"\")\n",
+        "\n",
+        "    for spasi_1003 in range(2 * (n_1003 - baris_1003)):\n",
+        "        print(\" \", end=\"\")\n",
+        "\n",
+        "    print(\" |\")\n",
+        "\n",
+        "print(\"|\", end=\"\")\n",
+        "for spasi_1003 in range(2 * n_1003 + 1):\n",
+        "    print(\" \", end=\"\")\n",
+        "\n",
+        "print(\"<*>\", end=\"\")\n",
+        "\n",
+        "for spasi_1003 in range(2 * n_1003 + 1):\n",
+        "    print(\" \", end=\"\")\n",
+        "\n",
+        "print(\n",
+        "    \"|\")\n",
+        "\n",
+        "for baris_1003 in range(1, n_1003 + 1):\n",
+        "    print(\"| \", end=\"\")\n",
+        "\n",
+        "    for spasi_1003 in range(2 * (n_1003 - baris_1003)):\n",
+        "        print(\" \", end=\"\")\n",
+        "\n",
+        "    for angka_1003 in range(baris_1003, 0, -1):\n",
+        "        print(angka_1003, end=\"\")\n",
+        "        if angka_1003 > 1:\n",
+        "            print(\" \", end=\"\")\n",
+        "\n",
+        "    print(\"<*>\", end=\"\")\n",
+        "\n",
+        "    for angka_1003 in range(1, baris_1003 + 1):\n",
+        "        print(\" \", end=\"\")\n",
+        "        print(angka_1003, end=\"\")\n",
+        "\n",
+        "    for spasi_1003 in range(2 * (n_1003 - baris_1003)):\n",
+        "        print(\" \", end=\"\")\n",
+        "\n",
+        "    print(\" |\")\n",
+        "\n",
+        "print(\"#\", end=\"\")\n",
+        "for i_1003 in range(4 * n_1003 + 5):\n",
+        "    print(\"=\", end=\"\")\n",
+        "print(\"#\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ehWSvk1CEIu5",
+        "outputId": "9b28ae8c-381d-4e17-caf2-8fcc0c369ea6"
+      },
+      "id": "ehWSvk1CEIu5",
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "=== PROGRAM JAM PASIR KRISTAL PALINDROMIK (PEKAN 5) ===\n",
+            "Masukkan ukuran skala jam pasir (N): 5\n",
+            "#=========================#\n",
+            "| 5 4 3 2 1<*> 1 2 3 4 5 |\n",
+            "|   4 3 2 1<*> 1 2 3 4   |\n",
+            "|     3 2 1<*> 1 2 3     |\n",
+            "|       2 1<*> 1 2       |\n",
+            "|         1<*> 1         |\n",
+            "|           <*>           |\n",
+            "|         1<*> 1         |\n",
+            "|       2 1<*> 1 2       |\n",
+            "|     3 2 1<*> 1 2 3     |\n",
+            "|   4 3 2 1<*> 1 2 3 4   |\n",
+            "| 5 4 3 2 1<*> 1 2 3 4 5 |\n",
+            "#=========================#\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Penjelasan Kode:**\n",
+        "\n",
+        "1. n_1003 = int(input(\"...\")): Meminta pengguna memasukkan angka skala jam pasir $N$ dan menyimpannya sebagai angka bulat di variabel n_1003.\n",
+        "\n",
+        "2. Bingkai Atas & Bawah (#=======#): Mencetak garis pembatas horizontal di bagian paling atas dan paling bawah menggunakan karakter = sebanyak $(4 \\times N + 5)$ yang diapit oleh tanda #.\n",
+        "\n",
+        "3. Bagian Atas Jam Pasir (for baris_1003 in range(n_1003, 0, -1):): Mengatur perulangan bergerak dari baris besar ke kecil ($N$ turun sampai $1$). Pada setiap baris, program mencetak:\n",
+        "* Garis dinding pembatas |.\n",
+        "* Spasi kosong penyeimbang di kiri.\n",
+        "* Deret angka menurun dari baris_1003 ke 1.\n",
+        "* Simbol poros pusat <*>.\n",
+        "* Deret angka menaik dari 1 ke baris_1003.\n",
+        "* Spasi penyeimbang di kanan dan ditutup garis dinding |.\n",
+        "\n",
+        "4. Poros Tengah / Titik Pusat: Mencetak bagian paling tengah jam pasir yang hanya berisi dinding |, spasi kosong di kiri dan kanan, serta simbol <*> tepat di tengah.\n",
+        "\n",
+        "5. Bagian Bawah Jam Pasir (for baris_1003 in range(1, n_1003 + 1):): Mengatur perulangan bergerak dari baris kecil ke besar ($1$ naik sampai $N$) dengan struktur mencetak yang sama, sehingga pola kembali melebar ke bawah secara simetris.\n",
+        "\n",
+        "\n",
+        "**Penjelasan Output:**\n",
+        "\n",
+        "Misalkan pengguna memasukkan angka 3 ($N = 3$):\n",
+        "\n",
+        "1. Bingkai Pembatas: Baris paling atas dan bawah ditutup dengan bingkai #=================#.\n",
+        "\n",
+        "2. Segitiga Atas: Angka bergerak menyempit ke tengah, dimulai dari 3 2 1<*> 1 2 3 pada baris pertama hingga 1<*> 1 pada baris ketiga.\n",
+        "\n",
+        "3. Titik Pusat: Mencetak simbol <*> di tengah ruangan kosong sebagai poros jam pasir.\n",
+        "\n",
+        "4. Segitiga Bawah: Angka kembali melebar ke bawah, dimulai dari 1<*> 1 hingga kembali menjadi 3 2 1<*> 1 2 3.\n",
+        "\n",
+        "5. Hasil akhirnya membentuk pola jam pasir kristal palindromik simetris yang terbungkus rapi di dalam bingkai."
+      ],
+      "metadata": {
+        "id": "E2IqKad_FeTc"
+      },
+      "id": "E2IqKad_FeTc"
+    },
+    {
+      "cell_type": "markdown",
+      "id": "m0faFohLGDr0",
+      "metadata": {
+        "id": "m0faFohLGDr0"
+      },
+      "source": [
+        "---\n",
+        "# BAB III\n",
+        "# KESIMPULAN\n",
+        "\n",
+        "Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa penggunaan perulangan for dan perulangan bersarang (nested loop) dalam bahasa pemrograman Python merupakan elemen esensial untuk mengontrol alur eksekusi proses berulang (iterasi) serta merancang struktur data multidimensi dan pola geometri secara efisien tanpa penulisan kode berulang. Seluruh materi utama telah berhasil diterapkan dengan baik melalui pembuatan program interaktif yang memanfaatkan fungsi input() serta konsisten menggunakan penamaan variabel berakhiran _1003.\n",
+        "\n",
+        "Penerapan tersebut mencakup enam konsep utama perulangan, yaitu:\n",
+        "\n",
+        "1. Perulangan for 1 Parameter (range(stop)): Berfungsi untuk mengiterasi sekumpulan perintah sebanyak $N$ kali secara berurutan mulai dari nilai dasar 0 hingga stop - 1.\n",
+        "\n",
+        "2. Perulangan for 2 Parameter (range(start, stop)): Digunakan untuk menentukan titik awal dan batas akhir iterasi secara eksplisit, sehingga proses perulangan dapat dimulai dari nilai tertentu tanpa harus diawali dari angka nol.\n",
+        "\n",
+        "3. Perulangan for 3 Parameter (range(start, stop, step)): Digunakan untuk mengontrol selisih atau interval perubahan nilai pada setiap iterasi, baik bergerak secara menaik (increment) maupun mengundur/menurun (decrement).\n",
+        "\n",
+        "4. Perulangan Bersarang Dasar (Nested Loop Grid/Matriks): Berfungsi untuk mengombinasikan outer loop (pengontrol pergerakan baris) dan inner loop (pengontrol pemrosesan kolom) dalam membentuk susunan matriks atau pola grid dua dimensi secara terstruktur.\n",
+        "\n",
+        "5. Perulangan Bersarang Dinamis dan Terbalik: Berfungsi untuk membentuk pola yang jumlah kolomnya bertambah atau berkurang secara fleksibel mengikut nilai variabel pada outer loop, seperti pada pembuatan pola segitiga siku-siku menaik dan terbalik.\n",
+        "\n",
+        "6. Formulasi Pola Geometri Kompleks dan Parameter end: Berfungsi untuk mencetak keluaran secara horizontal pada baris yang sama menggunakan print(..., end=\"\") serta mengombinasikan nested loop murni, perhitungan spasi penyeimbang, dan deret angka palindromik untuk membentuk pola geometri tingkat tinggi (seperti Jam Pasir Kristal) tanpa mengandalkan pendaraban rentetan (string multiplication)."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "57a22NEyGDr1",
+      "metadata": {
+        "id": "57a22NEyGDr1"
+      },
+      "source": [
+        "---\n",
+        "## DAFTAR PUSTAKA\n",
+        "\n",
+        "\n",
+        "[1] Guttag, J. V. (2021). Introduction to Computation and Programming Using Python: With Application to Computational Modeling and Understanding Data (3rd ed.). Cambridge: The MIT Press.\n",
+        "\n",
+        "[2] Matthes, E. (2019). Python Crash Course: A Hands-On, Project-Based Introduction to Programming (2nd ed.). San Francisco: No Starch Press.\n",
+        "\n",
+        "[3] Python Software Foundation. (2026). Python 3.11 Documentation: More Control Flow Tools. Diakses dari https://docs.python.org/3/tutorial/controlflow.html"
+      ]
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "collapsed_sections": [
+        "-sLEwFnQr6Ku",
+        "-VwgD-0Tsdf7",
+        "_uBbC9IXbv_H",
+        "JvkvW-_0y_U_",
+        "0d6MmRH0402n",
+        "Nywo0G54-MG8",
+        "g0jSONm6lPQP"
+      ],
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "ipython",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.11.9"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
