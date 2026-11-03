@@ -1,9 +1,9 @@
 # Expected output: 1, 3, 5 (one per line)
-number = 1
+number_1003 = 1
 
-while number <= 6:
-       if number % 2 == 0:
-             number += 1
+while number_1003 <= 6:
+       if number_1003 % 2 == 0:
+             number_1003 += 1
              continue
-       print(number)
-       number += 1
+       print(number_1003)
+       number_1003 += 1

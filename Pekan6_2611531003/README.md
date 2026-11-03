@@ -1,4 +1,4 @@
-praktikum-06-perulangan-NIM/
+praktikum-06-perulangan-2611531003/
 ├── README.md
 ├── p1_stop_loop.py
 ├── blok1/ t13_countdown.py, t14_pin.py

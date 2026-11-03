@@ -1,15 +1,15 @@
-correct_pin = "1234"   
-MAX_ATTEMPTS = 3
-attempt = 1
+correct_pin_1003 = "1234"   
+MAX_ATTEMPTS_1003 = 3
+attempt_1003 = 1
 
-pin = input("Enter PIN: ")
+pin_1003 = input("Enter PIN: ")
 
-while pin != correct_pin and attempt < MAX_ATTEMPTS:
+while pin_1003 != correct_pin_1003 and attempt_1003 < MAX_ATTEMPTS_1003:
     print("Incorrect PIN.")
-    attempt += 1
-    pin = input("Enter PIN: ")
+    attempt_1003 += 1
+    pin_1003 = input("Enter PIN: ")
 
-if pin == correct_pin:
+if pin_1003 == correct_pin_1003:
     print("Access granted")
 else:
     print("Account locked")
