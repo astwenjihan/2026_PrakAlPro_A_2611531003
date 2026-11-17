@@ -11,7 +11,8 @@ phone = "08123456789"
 masked = phone[:4] + "*" * 4 + phone[-4:]
 print(masked)
 
-# b.
-phone = "0812345678"
-masked = phone[:4] + '*' * 4 + phone[-3:]
+# b. 4 digit awal dan 3 digit akhir
+phone = "082611531003"
+hidden_count = len(phone) - 7
+masked = phone[:4] + ('*' * hidden_count) + phone[-3:]
 print(masked)
