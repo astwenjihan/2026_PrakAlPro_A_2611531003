@@ -1,0 +1,28 @@
+LAST_DIGIT = 3
+daily_limit = 30000 + LAST_DIGIT * 1000
+expenses = []
+
+for i in range(1, 8):
+    amount = int(input(f"Day {i}: "))
+    expenses.append(amount)
+
+total = 0
+highest = expenses[0]
+highest_day = 1
+days_above_limit = 0
+
+for i in range(len(expenses)):
+    total += expenses[i]
+    if expenses[i] > highest:
+        highest = expenses[i]
+        highest_day = i + 1
+    if expenses[i] > daily_limit:
+        days_above_limit += 1
+
+average = round(total / len(expenses), 1)
+
+print("Daily limit:", daily_limit)
+print("Total:", total)
+print("Average:", average)
+print(f"Highest: day {highest_day} ({highest})")
+print("Days above limit:", days_above_limit)
